@@ -2,17 +2,24 @@ import dotenv from 'dotenv'
 // import path from "path";
 import checkConnectionDB from './DB/connectionDB.js';
 import registrationRouter from './modules/registration/registration.controller.js';
-
+import cors from 'cors';
 // const envPath = path.resolve("src", "config", ".env")
 
 // dotenv.config({ path: envPath })
 dotenv.config({})
+
+var corsOptions = {
+  origin: true, 
+  credentials: true
+};
 
 const port = process.env.PORT || 5000;
 
 const bootstrap = async (app, express) => {
 
     checkConnectionDB();
+
+    app.use(cors(corsOptions));
 
     app.use(express.json());
 
