@@ -20,7 +20,7 @@ const bootstrap = async (app, express) => {
     checkConnectionDB();
 
     app.use(cors(corsOptions));
-    app.options('*', cors(corsOptions));
+  
 
     app.use(express.json());
 
