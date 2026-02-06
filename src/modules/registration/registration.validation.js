@@ -23,7 +23,7 @@ export const registrationSchema = {
         faculty: joi.string().min(3).max(30).required(),
         facultyID: joi.string().required(),
         technicalBackground: joi.string().max(200).optional(), 
-        workshop: joi.string().lowercase().valid(...workshopList).required() 
+        workshop: joi.string().lowercase().valid(...workshopList).required(),
     }).required(),
     file:joi.object({
   size:joi.number().positive().required(),
@@ -48,7 +48,7 @@ export const updateRegistrationSchema = {
         facultyID: joi.string(),
         technicalBackground: joi.string().max(200),
         workshop: joi.string().valid(...workshopList)
-    }).min(1).required(),
+    }).required(),
     params: joi.object({
         id: joi.string().custom(customId).required()
     }).required(),

@@ -72,7 +72,11 @@ const registrationSchema = new mongoose.Schema({
         ],
         required: true,
         lowercase: true
-    }
+    },
+    cv:{
+    secure_url:{type:String},
+    public_id:{type:String}
+},
 }, { timestamps: true });
 
 const registrationModel = mongoose.models.Registration || mongoose.model("Registration", registrationSchema);

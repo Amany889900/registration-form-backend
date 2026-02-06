@@ -1,11 +1,12 @@
 import dotenv from 'dotenv'
-import path from "path";
+// import path from "path";
 import checkConnectionDB from './DB/connectionDB.js';
 import registrationRouter from './modules/registration/registration.controller.js';
 
-const envPath = path.resolve("src", "config", ".env")
+// const envPath = path.resolve("src", "config", ".env")
 
-dotenv.config({ path: envPath })
+// dotenv.config({ path: envPath })
+dotenv.config({})
 
 const port = process.env.PORT || 5000;
 

@@ -7,9 +7,9 @@ import { fileValidation, multerCloud } from "../../middleware/multer.js";
 
 const registrationRouter = Router();
 
-registrationRouter.post("/register",multerCloud({fileTypes:fileValidation.file}).single("CV"),validation(RV.registrationSchema),RS.register);
+registrationRouter.post("/register",multerCloud({fileTypes:fileValidation.file}).single("cv"),validation(RV.registrationSchema),RS.register);
 registrationRouter.get("/{:id}",validation(RV.getRegistrationSchema), RS.getRegistration);
-registrationRouter.patch("/{:id}",validation(RV.updateRegistrationSchema) ,RS.updateRegistration);
+registrationRouter.patch("/{:id}",multerCloud({fileTypes:fileValidation.file}).single("cv"),validation(RV.updateRegistrationSchema) ,RS.updateRegistration);
 
 
 export default registrationRouter
